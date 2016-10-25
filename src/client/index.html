@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="/">
-    <title>Angular With Webpack</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <title>Angular 2 demo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .spinner {
+      position: fixed;
+      background-color: #f44;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spinner-item {
+      width: 200px;
+      text-align: center;
+      color: white;
+      animation: rotate 4s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+
+    body {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+  </style>
 </head>
 <body>
-<my-app>Loading...</my-app>
+<my-app>
+  <div class="spinner">
+    <div class="spinner-item">Angular</div>
+  </div>
+</my-app>
 </body>
 </html>

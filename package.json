@@ -4,8 +4,9 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
+    "serve" : "node ./src/server/server.js",
     "test": "karma start",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build": "rimraf dist && webpack  --progress --profile --bail",
     "postinstall": "typings install"
   },
   "licenses": [
@@ -26,6 +27,7 @@
     "core-js": "^2.4.1",
     "css": "^2.2.1",
     "css-loader": "^0.23.1",
+    "express": "^4.14.0",
     "rxjs": "5.0.0-beta.12",
     "to-string": "^0.2.0",
     "to-string-loader": "^1.1.5",
