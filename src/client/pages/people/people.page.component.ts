@@ -8,14 +8,25 @@ import {Observable} from 'rxjs';
 
 @Component({
   templateUrl: './people.page.template.html',
-  styleUrls: ['people.page.style.css']
+  styleUrls: ['./people.page.style.css']
 })
 export class PeoplePageComponent {
   people: Observable<any>;
   peoples: Array<any>;
-  constructor(private service: PeoplePageService){
+
+  constructor(private service: PeoplePageService) {
     this.service.getAllPeople().subscribe(res => {
+      console.log(res);
       this.peoples = res.peoples;
+      // console.log('foo');
+    });
+  }
+
+  addPeople(name: any) {
+    console.log(name);
+    this.service.addPeople(name).subscribe( res => {
+      console.log('send', res);
     });
   }
 }
+

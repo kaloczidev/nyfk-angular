@@ -10,7 +10,7 @@ var peopleController = require('./controller/people-controller');
 
 router.get('/people/', peopleController.list);
 router.get('/people/:id', peopleController.get);
-router.put('/people/:id', peopleController.put);
+router.put('/people/', peopleController.put);
 router.post('/people/:id', peopleController.post);
 router.delete('/people/:id', peopleController.delete);
 

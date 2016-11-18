@@ -21,6 +21,7 @@ import {LayoutModule} from "../layout/layout.module";
 const routes = [
   {path: '', component: IndexPageComponent},
   {path: 'people', component: PeoplePageComponent},
+  {path: 'a', component: PeoplePageComponent},
   {path: 'cars', component: CarsPageComponent},
   {path: 'ownership', component: OwnershipPageComponent},
 ];

@@ -3,8 +3,6 @@
 </h1>
 ownership
 
-<ul>
-  <li *ngFor="let i of peoples">
-    {{i}}
-  </li>
-</ul>
+<app-table [rows]="peoples"></app-table>
+
+<row-editor [field]="'people ID:'" [value]="'teszt'" (save)="addPeople($event)"></row-editor>
