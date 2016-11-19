@@ -8,10 +8,10 @@ var router  = express.Router();
 
 var peopleController = require('./controller/people-controller');
 
-router.get('/people/', peopleController.list);
-router.get('/people/:id', peopleController.get);
-router.put('/people/', peopleController.put);
-router.post('/people/:id', peopleController.post);
-router.delete('/people/:id', peopleController.delete);
+router.get('/people/', peopleController.list);          //all
+router.get('/people/:id', peopleController.get);        //get
+router.put('/people/', peopleController.put);           //add
+router.post('/people/:id', peopleController.post);      //upd
+router.delete('/people/:id', peopleController.delete);  //del
 
 module.exports = router;

@@ -3,7 +3,7 @@
  */
 
 var express = require('express');
-var config  = require('./../../config/server-config.json');
+var config  = require('./../../config/server.config.json');
 var router  = require('./router');
 
 var bodyParser = require('body-parser');
