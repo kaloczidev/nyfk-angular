@@ -5,14 +5,14 @@
 let mysql          = require('mysql');
 const MYSQL_CONFIG = require('../../../config/mysql.config.json');
 
-let list = function (callback) {
+let list = callback => {
   const query = `SELECT * FROM people`;
   let conn    = mysql.createConnection(MYSQL_CONFIG);
   conn.query(query, (err, rows) => {
     if (!err) {
       console.log('success!');
     } else {
-      console.log('error!');
+      console.log('error!', err);
     }
     callback({
       data : rows,
@@ -23,14 +23,14 @@ let list = function (callback) {
   conn.end();
 };
 
-let get = function (id, callback) {
+let get = (id, callback) => {
   const query = `SELECT * FROM people WHERE id=${id}`;
   let conn    = mysql.createConnection(MYSQL_CONFIG);
   conn.query(query, (err, rows) => {
     if (!err) {
       console.log('success!');
     } else {
-      console.log('error!');
+      console.log('error!', err);
     }
     callback({
       data : rows,
@@ -41,7 +41,7 @@ let get = function (id, callback) {
   conn.end();
 };
 
-let add = function (data, callback) {
+let add = (data, callback) => {
   const query = `INSERT INTO people(name, age) 
               VALUES("${data.name}", ${data.age} )`;
 
@@ -50,7 +50,7 @@ let add = function (data, callback) {
     if (!err) {
       console.log('success!');
     } else {
-      console.log('error!');
+      console.log('error!', err);
     }
     callback({
       data : rows,
@@ -61,13 +61,13 @@ let add = function (data, callback) {
   conn.end();
 };
 
-let update = function (id, data, callback) {
+let update = (id, data, callback) =>{
   const query = `UPDATE people SET
                   name="${data.name}",
                   age=${data.age}
                 WHERE id=${id}
   `;
-  let conn = mysql.createConnection(MYSQL_CONFIG);
+  let conn    = mysql.createConnection(MYSQL_CONFIG);
   conn.query(query, (err, rows) => {
     if (!err) {
       console.log('update success!');
@@ -83,14 +83,14 @@ let update = function (id, data, callback) {
   conn.end();
 };
 
-let del = function (id, callback) {
+let del = (id, callback) =>{
   const query = `DELETE FROM people WHERE id=${id}`;
   let conn    = mysql.createConnection(MYSQL_CONFIG);
   conn.query(query, (err, rows) => {
     if (!err) {
       console.log('success!');
     } else {
-      console.log('error!');
+      console.log('error!', err);
     }
     callback({
       data : rows,

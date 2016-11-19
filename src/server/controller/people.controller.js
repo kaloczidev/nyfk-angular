@@ -2,12 +2,11 @@
  * Created by kaloczidavid on 2016. 10. 25..
  */
 
-const peopleModel = require('../model/people.model');
+const PeopleModel = require('../model/people.model');
 
 const list = (req, res) => {
-  console.log('list message:', req.params);
-  peopleModel.list((result) => {
-    console.log(result);
+  console.log('people list people');
+  PeopleModel.list((result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
@@ -17,9 +16,9 @@ const list = (req, res) => {
 };
 
 let get = (req, res) => {
-  console.log('get message:', req.params);
+  console.log('people get message:', req.params);
   const id = req.params.id;
-  peopleModel.get(id, (result) => {
+  PeopleModel.get(id, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
@@ -29,8 +28,8 @@ let get = (req, res) => {
 
 };
 let put = (req, res) => {
-  console.log('put data: ', req.body);
-  peopleModel.add(req.body, (result) => {
+  console.log('people put data: ', req.body);
+  PeopleModel.add(req.body, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
@@ -41,9 +40,9 @@ let put = (req, res) => {
 
 let post = (req, res) => {
   const id = req.params.id;
-  console.log('put id: ', id);
-  console.log('put data:', req.body);
-  peopleModel.update(id, req.body, (result) => {
+  console.log('people post id: ', id);
+  console.log('people post data:', req.body);
+  PeopleModel.update(id, req.body, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
@@ -54,8 +53,8 @@ let post = (req, res) => {
 
 let del = (req, res) => {
   const id = req.params.id;
-  console.log('delete id: ', id);
-  peopleModel.delete(id, (result) => {
+  console.log('people delete id: ', id);
+  PeopleModel.delete(id, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
