@@ -42,13 +42,13 @@ let get = (id, callback) => {
 };
 
 let add = (data, callback) => {
-  const query = `INSERT INTO cars(name, year) 
-              VALUES("${data.name}", ${data.year} )`;
-
+  const query = `INSERT INTO cars(manufacturer,type, year) 
+              VALUES("${data.manufacturer}","${data.type}", ${data.year} )`;
+  console.log(query);
   let conn = mysql.createConnection(MYSQL_CONFIG);
   conn.query(query, (err, rows) => {
     if (!err) {
-      console.log('cars add success!');
+      console.log('cars add success!', rows);
     } else {
       console.log('cars add error!', err);
     }
@@ -61,10 +61,11 @@ let add = (data, callback) => {
   conn.end();
 };
 
-let update = (id, data, callback) =>{
+let update = (id, data, callback) => {
   const query = `UPDATE cars SET
-                  name="${data.name}",
-                  year=${data.year}
+                  manufacturer="${data.manufacturer}",
+                  type="${data.type}",
+                  year="${data.year}"
                 WHERE id=${id}
   `;
   let conn    = mysql.createConnection(MYSQL_CONFIG);
@@ -83,7 +84,7 @@ let update = (id, data, callback) =>{
   conn.end();
 };
 
-let del = (id, callback) =>{
+let del = (id, callback) => {
   const query = `DELETE FROM cars WHERE id=${id}`;
   let conn    = mysql.createConnection(MYSQL_CONFIG);
   conn.query(query, (err, rows) => {

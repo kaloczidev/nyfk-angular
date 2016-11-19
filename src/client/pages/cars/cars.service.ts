@@ -5,14 +5,14 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs';
-import {Car} from '../interfaces/car.interface';
+import {Car} from '../../interfaces/car.interface';
 
 @Injectable()
 export class CarsService {
 
   headers = new Headers({"Content-Type": "application/json"});
   options = new RequestOptions({headers: this.headers});
-  path    = 'cars';
+  path = 'cars';
 
   constructor(private http: Http) {
   }
@@ -49,8 +49,8 @@ export class CarsService {
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';
-      const err  = body.error || JSON.stringify(body);
-      errMsg     = `${error.status} - ${error.statusText || ''} ${err}`;
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
     } else {
       errMsg = error.message ? error.message : error.toString();
     }

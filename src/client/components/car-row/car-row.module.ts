@@ -4,15 +4,15 @@
 
 import {NgModule} from '@angular/core';
 
-import {PersonEditorComponent} from './person-row.component';
+import {CarEditorComponent} from './car-row.component';
 import {CommonModule} from '@angular/common';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [CommonModule, HttpModule, FormsModule],
-  declarations: [PersonEditorComponent],
-  exports: [PersonEditorComponent]
+  declarations: [CarEditorComponent],
+  exports: [CarEditorComponent]
 })
-export class PersonEditorModule {
+export class CarEditorModule {
 }

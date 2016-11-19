@@ -16,6 +16,7 @@ div, body, footer, p, section, header {
   padding: 0;
   margin: 0;
   border: 0;
+  box-sizing: border-box;
 }
 
 a, h1, h2, h3, h4, h5, h6 {
@@ -25,4 +26,16 @@ a, h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 32px;
   margin-bottom: 20px;
+}
+
+input, button {
+  padding: 5px;
+  border-radius: 2px;
+  border:1px solid #efefef;
+  color: #4a4a4a;
+  background-color: #fff;
+  width: 100%;
+}
+input:focus {
+  outline: none;
 }

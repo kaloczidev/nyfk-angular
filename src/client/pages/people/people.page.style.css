@@ -9,3 +9,6 @@ thead th{
 person-row:nth-child(2n) {
   background-color: #f0f0f0;
 }
+tfoot{
+  padding-top: 20px;
+}
