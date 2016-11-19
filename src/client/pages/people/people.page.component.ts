@@ -3,30 +3,47 @@
  */
 
 import {Component} from '@angular/core';
-import {PeoplePageService} from './people.page.service';
-import {Observable} from 'rxjs';
+import {PeopleService} from './people.service';
+import {Person} from '../../interfaces/person.interface';
 
 @Component({
   templateUrl: './people.page.template.html',
   styleUrls: ['./people.page.style.css']
 })
 export class PeoplePageComponent {
-  people: Observable<any>;
-  peoples: Array<any>;
+  peoples: Array<Person>;
+  newPerson: Person = {name: null, age: null};
 
-  constructor(private service: PeoplePageService) {
-    this.service.getAllPeople().subscribe(res => {
-      console.log(res);
-      this.peoples = res.peoples;
-      // console.log('foo');
+  constructor(private service: PeopleService) {
+    this.update();
+  }
+
+  edit(id: number, data: Person) {
+    this.service.update(id, data).subscribe(res => {
+      console.log('send', res);
     });
   }
 
-  addPeople(name: any) {
-    console.log(name);
-    this.service.addPeople(name).subscribe( res => {
-      console.log('send', res);
+  del(id: number) {
+    this.service.del(id).subscribe(res => {
+      console.log('delete:', res);
+      this.update();
     });
+  }
+
+  add() {
+    this.service.add(this.newPerson).subscribe(res => {
+      console.log('add:', res);
+      this.update();
+    });
+  }
+
+  private update() {
+    this.peoples = [];
+    this.service.list().subscribe(res => {
+      this.peoples = res;
+    });
+    this.newPerson = {name: null, age: null};
   }
 }
 

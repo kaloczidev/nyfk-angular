@@ -4,17 +4,17 @@
 import {NgModule} from '@angular/core';
 
 import {PeoplePageComponent} from './people.page.component';
-import {PeoplePageService} from './people.page.service';
 import {CommonModule} from '@angular/common';
 import {HttpModule} from '@angular/http';
-import {AppTableModule} from '../../components/table/app-table.module';
-import {RowEditorModule} from '../../components/row-editor/row-editor.module';
+import {RowEditorModule} from '../../components/person-row/person-row.module';
+import {PeopleService} from './people.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, HttpModule, AppTableModule, RowEditorModule],
+  imports: [CommonModule, HttpModule, RowEditorModule, FormsModule],
   declarations: [PeoplePageComponent],
   exports: [PeoplePageComponent],
-  providers: [PeoplePageService]
+  providers: [PeopleService]
 })
 export class PeoplePageModule {
 }

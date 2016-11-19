@@ -1,8 +1,40 @@
 <h1>
   People
 </h1>
-ownership
+<p>People found:</p>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>command</th>
+  </tr>
+  </thead>
+  <tbody>
+  <person-row *ngFor="let row of peoples" [row]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)"></person-row>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td class="id">
+      add new:
+    </td>
 
-<app-table [rows]="peoples"></app-table>
+    <td class="data">
+      name
+      <input type="text" [(ngModel)]="newPerson.name">
+    </td>
 
-<row-editor [field]="'people ID:'" [value]="'teszt'" (save)="addPeople($event)"></row-editor>
+    <td class="data">
+      age
+      <input type="number" [(ngModel)]="newPerson.age">
+    </td>
+
+    <td>
+      <button (click)="add()">
+        save
+      </button>
+    </td>
+  </tr>
+  </tfoot>
+</table>

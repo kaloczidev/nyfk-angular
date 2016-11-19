@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+thead th{
+  border-bottom: 2px solid #383539;
+}
+person-row:nth-child(2n) {
+  background-color: #f0f0f0;
+}
