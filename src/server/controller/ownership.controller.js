@@ -1,12 +1,13 @@
 /**
- * Created by kaloczidavid on 2016. 11. 19..
+ * Created by kaloczidavid on 2016. 11. 20..
  */
 
-const CarsModel = require('../model/cars.model');
+const OwnershipModel = require('../model/ownership.model');
+
 
 const list = (req, res) => {
-  console.log('cars list people');
-  CarsModel.list((result) => {
+  console.log('ownerships list');
+  OwnershipModel.list((result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
@@ -16,9 +17,9 @@ const list = (req, res) => {
 };
 
 const get = (req, res) => {
-  console.log('cars get message:', req.params);
+  console.log('ownerships get message:', req.params);
   const id = req.params.id;
-  CarsModel.get(id, (result) => {
+  OwnershipModel.get(id, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
@@ -28,8 +29,8 @@ const get = (req, res) => {
 
 };
 const put = (req, res) => {
-  console.log('cars put data: ', req.body);
-  CarsModel.add(req.body, (result) => {
+  console.log('ownerships put data: ', req.body);
+  OwnershipModel.add(req.body, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
@@ -40,21 +41,22 @@ const put = (req, res) => {
 
 const post = (req, res) => {
   const id = req.params.id;
-  console.log('cars post id: ', id);
-  console.log('cars post data:', req.body);
-  CarsModel.update(id, req.body, (result) => {
+  console.log('ownerships post id: ', id);
+  console.log('ownerships post data:', req.body);
+  OwnershipModel.update(id, req.body, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {
       res.header(404).send(result.error);
     }
   });
+
 };
 
 const del = (req, res) => {
   const id = req.params.id;
-  console.log('cars delete id: ', id);
-  CarsModel.delete(id, (result) => {
+  console.log('ownerships delete id: ', id);
+  OwnershipModel.delete(id, (result) => {
     if (!result.error) {
       res.header(200).send(result.data);
     } else {

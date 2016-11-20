@@ -1,7 +1,6 @@
 <h1>
   People
 </h1>
-<p>People found:</p>
 <table>
   <thead>
   <tr>
@@ -14,19 +13,42 @@
   <tbody>
   <person-row *ngFor="let row of peoples" [row]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)"></person-row>
   </tbody>
-  <tfoot>
+
+</table>
+
+<hr>
+
+<table>
+  <thead>
+
   <tr>
     <td class="id">
-      add new:
+      add new
     </td>
 
     <td class="data">
-      name
+      Name
+    </td>
+
+    <td class="data">
+      Age
+    </td>
+
+    <td>
+        Command
+    </td>
+  </tr>
+  </thead>
+  <tr>
+    <td class="id">
+      Details:
+    </td>
+
+    <td class="data">
       <input type="text" [(ngModel)]="newPerson.name">
     </td>
 
     <td class="data">
-      age
       <input type="number" [(ngModel)]="newPerson.age">
     </td>
 
@@ -36,5 +58,4 @@
       </button>
     </td>
   </tr>
-  </tfoot>
 </table>

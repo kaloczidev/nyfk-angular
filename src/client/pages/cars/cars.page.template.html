@@ -12,25 +12,54 @@
   </tr>
   </thead>
   <tbody>
-  <car-row *ngFor="let row of cars" [row]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)"></car-row>
+  <car-row *ngFor="let row of cars" [row]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)">
+  </car-row>
   </tbody>
-  <tfoot>
+
+</table>
+
+<hr>
+
+<table>
+  <thead>
   <tr>
-    <td class="id">
-      add new:
+    <td>
+      add new
     </td>
 
     <td class="data">
       Manufacturer
-      <input type="text" [(ngModel)]="newCar.manufacturer">
     </td>
     <td class="data">
       Type
-      <input type="text" [(ngModel)]="newCar.type">
     </td>
 
     <td class="data">
       Year
+    </td>
+
+    <td>
+      Command
+    </td>
+
+
+  </tr>
+
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      details:
+    </td>
+
+    <td class="data">
+      <input type="text" [(ngModel)]="newCar.manufacturer">
+    </td>
+    <td class="data">
+      <input type="text" [(ngModel)]="newCar.type">
+    </td>
+
+    <td class="data">
       <input type="number" [(ngModel)]="newCar.year">
     </td>
 
@@ -40,5 +69,6 @@
       </button>
     </td>
   </tr>
-  </tfoot>
+
+  </tbody>
 </table>

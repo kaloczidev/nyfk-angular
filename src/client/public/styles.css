@@ -1,10 +1,12 @@
 @import 'https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700|Open+Sans:300,400,700&subset=latin-ext';
 
 body {
-  background-color: #383539;
+  background-color: #222b39;
   font-family: 'Noto Serif', serif;
   position: relative;
-  min-height: 100vh;
+}
+html, body {
+  min-height: 100%;
 }
 div, body, footer, p, section, header {
   display: block;
@@ -38,4 +40,13 @@ input, button {
 }
 input:focus {
   outline: none;
+}
+table {
+  margin-top: 30px;
+}
+
+hr {
+  display: block;
+  border-bottom:1px solid #dedede;
+  margin: 10px 0;
 }

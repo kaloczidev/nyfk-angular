@@ -1,0 +1,29 @@
+<td class="id">
+  <span *ngIf="!edit">
+  {{value.name}}
+  </span>
+  <select *ngIf="edit" [(ngModel)]="value.pid">
+    <option *ngFor="let person of people" [value]="person.id">
+      {{person.name}}
+    </option>
+  </select>
+</td>
+<td>
+  <span *ngIf="!edit">
+    <strong>{{value.manufacturer}}</strong> {{value.type}}
+  </span>
+
+  <select *ngIf="edit" [(ngModel)]="value.cid">
+    <option *ngFor="let car of cars" [value]="car.id">
+      {{car.manufacturer+' '+car.type+' '+car.year}}
+    </option>
+  </select>
+
+<td>
+  <button (click)="toggle()">
+    {{edit?'save':'edit'}}
+  </button>
+  <button (click)="del()">
+    delete
+  </button>
+</td>

@@ -1,3 +1,9 @@
 :host{
   display:table-row;
+  line-height: 40px;
+}
+
+button {
+  width: auto;
+  padding: 5px 10px;
 }
