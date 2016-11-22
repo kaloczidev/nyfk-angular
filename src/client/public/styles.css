@@ -4,6 +4,7 @@ body {
   background-color: #222b39;
   font-family: 'Noto Serif', serif;
   position: relative;
+  color: #fefefe;
 }
 html, body {
   min-height: 100%;
