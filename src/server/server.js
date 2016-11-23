@@ -15,7 +15,6 @@ app.use(bodyParser.urlencoded({   // to support URL-encoded bodies
   extended: true
 }));
 
-
 app.use('/',express.static(__dirname + './../../dist'));
 
 app.use(router);
