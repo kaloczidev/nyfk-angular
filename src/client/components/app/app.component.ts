@@ -21,6 +21,7 @@ export class AppComponent {
 			.get('hero')
             .map(res => res.json())
             .subscribe( (result) => {
+              console.log(result);
             	this.heroList = result.data || []; 
             });
 	}
