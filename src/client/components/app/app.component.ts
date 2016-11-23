@@ -3,6 +3,8 @@
  */
 
 import {Component, ViewEncapsulation} from '@angular/core';
+import {Hero} from '../../interfaces/hero.interface';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'my-app',
@@ -11,4 +13,17 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
+	heroList: Array<Hero> = [];
+
+	constructor (private http: Http) {
+		// load heroes
+		this.http
+			.get('hero')
+            .map(res => res.json())
+            .subscribe( (result) => {
+            	this.heroList = result.data || []; 
+            });
+	}
+	
+
 }
