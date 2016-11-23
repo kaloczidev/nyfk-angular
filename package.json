@@ -6,6 +6,7 @@
     "start": "webpack-dev-server --inline --progress --port 8080",
     "serve": "node ./src/server/server.js",
     "test": "karma start",
+    "telepit": "npm i && typings install && webpack",
     "build": "rimraf dist && webpack",
     "postinstall": "typings install"
   },
