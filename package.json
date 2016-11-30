@@ -8,7 +8,8 @@
     "test": "karma start",
     "telepit": "npm i && typings install && webpack",
     "build": "rimraf dist && webpack",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "webpack": "webpack -w"
   },
   "licenses": [
     {

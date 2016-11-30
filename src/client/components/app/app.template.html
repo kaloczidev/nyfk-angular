@@ -1,13 +1,8 @@
 
 <div class="wrapper">
-	<h1 (click)="foo()" >{{szoveg}}</h1>
+	<h1>{{szoveg}}</h1>
 
   Hosok:
-	<div *ngFor="let hero of heroList" class="hero">
-		Nev: {{hero.name}} <br>
-		Ero: {{hero.power}} <br>
-		Intelligencia: {{hero.intelligence}} <br>
-		Ugyesseg: {{hero.agility}} <br>
-	</div>
+  <hero *ngFor="let hero of heroList" [adat]="245"></hero>
 
 </div>

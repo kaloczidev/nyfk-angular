@@ -10,6 +10,7 @@ import {HttpModule} from "@angular/http";
 
 import {AppComponent} from './app.component';
 
+import {HeroModule} from '../hero/hero.module';
 // https://github.com/kaloczidev/nyfk-angular
 
 
@@ -17,7 +18,8 @@ import {AppComponent} from './app.component';
   imports: [
     BrowserModule,
     CommonModule,
-    HttpModule
+    HttpModule,
+    HeroModule
   ],
   declarations: [
     AppComponent

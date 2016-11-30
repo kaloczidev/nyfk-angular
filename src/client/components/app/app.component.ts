@@ -41,7 +41,7 @@ export class AppComponent {
       });
   }
 
-  public foo() {
+  public foo(data?: any) {
     console.log('111');
   }
 
