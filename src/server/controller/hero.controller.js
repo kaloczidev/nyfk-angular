@@ -25,6 +25,15 @@ let get = (req, res) => {
     });
   }
 };
+
+let post = (req, res) => {
+  let postedData = req.body;
+  console.log('post uzenet tartalma: ');
+  console.log(postedData);
+  res.header(200).send({uzenet: 'koszi'});
+};
+
 module.exports = {
-  get   : get
+  get   : get,
+  post: post
 };

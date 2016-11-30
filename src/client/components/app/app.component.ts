@@ -41,8 +41,19 @@ export class AppComponent {
       });
   }
 
-  public foo(data?: any) {
-    console.log('111');
+  udvozles( esemeny:any ) {
+    console.log('udv az appbol, ' +
+      esemeny.name + ' vagyok.');
+
+    this.http
+      .post('hero',{ uzenet: 'szoveg a szervernek'})
+      .map( res => res.json() )
+      .subscribe( result => {
+        // szerver valaszol itt a responseban
+        console.log('szerver valasza:');
+        console.log(result);
+      });
+
   }
 
 }

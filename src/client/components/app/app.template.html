@@ -3,6 +3,9 @@
 	<h1>{{szoveg}}</h1>
 
   Hosok:
-  <hero *ngFor="let hero of heroList" [adat]="245"></hero>
-
+  <hero *ngFor="let hero of heroList"
+        [adat]="hero"
+        (udv)="udvozles($event)"
+  >
+  </hero>
 </div>
