@@ -1,11 +1,14 @@
 .wrapper {
-	width: 800px;
+	width: 830px;
 	margin: 0 auto;
 	background-color: #fff;
 	color: #343434;
 	padding: 15px;
 }
-.hero {
-  padding: 10px;
-  border-top: 1px solid #8a8a8a;
+.hero-container {
+  width: 800px;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

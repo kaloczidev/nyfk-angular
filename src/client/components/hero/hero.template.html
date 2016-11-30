@@ -1,10 +1,21 @@
-<p>Hos vagyok!</p>
-kapott adat: {{adat|json}} <br>
-Nevem: {{adat.name}} <br>
-Erom: {{adat.power}} <br>
-Eszem: {{adat.intelligence}} <br>
-Ugyessegem: {{adat.agility}} <br>
-<button (click)="kattintas()">
-  Hello
-</button>
-<hr>
+<!--HTML es CSS az egesz, adatkotesek {{}} kozt.-->
+<div class="hero">
+  <h3>{{data.name}}</h3>
+  <div class="stat">
+    <strong>Power:</strong> {{data.power}}
+  </div>
+  <div class="stat">
+    <strong>Intelligence:</strong> {{data.intelligence}}
+  </div>
+  <div class="stat">
+    <strong>Agility:</strong> {{data.agility}}
+  </div>
+  <!--
+    az Angular biztositja a DOM esemenyekhez az Action-kotest.
+    Actionokat, esemenyeket () kozt megadott esemenynevvel tudunk
+    hasznalni, pl.: (click) az a onclick-et valositja meg.
+  -->
+  <button (click)="onClick()">
+    Greet
+  </button>
+</div>

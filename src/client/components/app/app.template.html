@@ -1,11 +1,34 @@
 
 <div class="wrapper">
-	<h1>{{szoveg}}</h1>
+  <!--
+    app.component.ts -ben levo title mezo.
+    {{}} kozott levo kifejezest irja ki a html-be.
+   -->
+	<h1>{{title}}</h1>
+  <!--
+  Az app.module-ban importaljuk a Common es a Hero modulet.
 
-  Hosok:
-  <hero *ngFor="let hero of heroList"
-        [adat]="hero"
-        (udv)="udvozles($event)"
-  >
-  </hero>
+  HeroModule: tartalmazza a HeroComponentet, ami definialja a `hero` taget.
+
+  CommonModule: template logika pl.: *ngIf, *ngFor.
+
+   pelda *ngIf-re hasznalatra:
+      <div *ngIf="true"> hello </div>  <<-- lathato, benne van a DOM-faban
+      <div *ngIf="false"> hello </div>  <<-- nem lathato, nincs a DOM-faban
+
+   -->
+  <div class="hero-container">
+    <!--
+     []-kozt atadunk adatot a komponensnek.
+     () a komponens esemenyeit figyeljuk: ez lehet gyari (click), vagy epp
+     sajatkezzel irt kimenet ( @Output, eventemitter). A `$event`-lesz az
+     esemeny, ami tortenik, es az emitter miatt csak az atadott adat fog
+     a fuggveny bemeneten megjelenni.
+    -->
+    <hero *ngFor="let hero of heroList"
+          [data]="hero"
+          (greet)="udvozles($event)"
+    >
+    </hero>
+  </div>
 </div>

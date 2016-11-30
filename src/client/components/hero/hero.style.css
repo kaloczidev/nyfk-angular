@@ -1,0 +1,6 @@
+.hero {
+  display: inline-block;
+  width: 200px;
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 4px rgba(100,100,100, .2);
+}

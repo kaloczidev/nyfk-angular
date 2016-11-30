@@ -13,6 +13,20 @@ import {AppComponent} from './app.component';
 import {HeroModule} from '../hero/hero.module';
 // https://github.com/kaloczidev/nyfk-angular
 
+/**
+ * Importaljuk az adott epitoelem fuggosegeit. listazva:
+ *
+ *
+ * HeroModule: emiatt hasznalhato az abban letrehozott hero component.
+ *
+ * CommonModule: Ez a modul teszi lehetove, hogy kulonfele
+ * template logikat hasznaljunk pl.: *ngIf, *ngFor.
+ *
+ * BrowserModule: Ahhoz, hogy az alkalmazas bongeszoben fusson, az angularos
+ * dolgokat intezi a hatterben.
+ *
+ * HttpModule: http keresekhez hasznaljuk.
+ */
 
 @NgModule({
   imports: [
