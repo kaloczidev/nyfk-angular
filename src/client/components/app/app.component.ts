@@ -47,13 +47,13 @@ export class AppComponent {
   /* itt lathato, hogy a fuggveny bemenete az a templateban a `$event`, viszont
    * itt mar csak az adatot varjuk. Hasznaljunk interfeszeket!
    */
-  udvozles(esemeny: Hero) {
+  udvozles(eventData: Hero) {
     console.log('udv az esemenybol, ' +
-      esemeny.name + ' vagyok.');
+      eventData.name + ' vagyok.');
 
     this.http
     // postnal a http keresnek a torzset is meg kell adni, es masodik parameterkent.
-      .post('hero', {uzenet: 'szoveg a szervernek'})
+      .post('hero', {message: 'szoveg a szervernek', hero: eventData.name})
       .map(res => res.json())
       .subscribe(result => {
         // szerver valaszol itt a responseban
