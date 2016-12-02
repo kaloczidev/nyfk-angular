@@ -8,9 +8,9 @@ const list = (req, res) => {
   console.log('cars list people');
   CarsModel.list((result) => {
     if (!result.error) {
-      res.header(200).send(result.data);
+      res.header(200).send(result);
     } else {
-      res.header(400).send(result.error);
+      res.header(400).send(result);
     }
   });
 };
@@ -20,9 +20,9 @@ const get = (req, res) => {
   const id = req.params.id;
   CarsModel.get(id, (result) => {
     if (!result.error) {
-      res.header(200).send(result.data);
+      res.header(200).send(result);
     } else {
-      res.header(404).send(result.error);
+      res.header(404).send(result);
     }
   });
 
@@ -31,9 +31,9 @@ const put = (req, res) => {
   console.log('cars put data: ', req.body);
   CarsModel.add(req.body, (result) => {
     if (!result.error) {
-      res.header(200).send(result.data);
+      res.header(200).send(result);
     } else {
-      res.header(404).send(result.error);
+      res.header(404).send(result);
     }
   });
 };
@@ -44,9 +44,9 @@ const post = (req, res) => {
   console.log('cars post data:', req.body);
   CarsModel.update(id, req.body, (result) => {
     if (!result.error) {
-      res.header(200).send(result.data);
+      res.header(200).send(result);
     } else {
-      res.header(404).send(result.error);
+      res.header(404).send(result);
     }
   });
 };
@@ -56,9 +56,9 @@ const del = (req, res) => {
   console.log('cars delete id: ', id);
   CarsModel.delete(id, (result) => {
     if (!result.error) {
-      res.header(200).send(result.data);
+      res.header(200).send(result);
     } else {
-      res.header(404).send(result.error);
+      res.header(404).send(result);
     }
   });
 };

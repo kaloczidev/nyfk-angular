@@ -20,20 +20,20 @@ export class CarsPageComponent {
 
   edit(data: Car) {
     this.service.update(data.id, data).subscribe(res => {
-      console.log('send', res);
+      console.log('update:', res.data);
     });
   }
 
   del(id: number) {
     this.service.del(id).subscribe(res => {
-      console.log('delete:', res);
+      console.log('delete:', res.data);
       this.update();
     });
   }
 
   add() {
     this.service.add(this.newCar).subscribe(res => {
-      console.log('add:', res);
+      console.log('add:', res.data);
       this.update();
     });
   }
@@ -42,7 +42,7 @@ export class CarsPageComponent {
     this.cars = [];
     this.service.list().subscribe(res => {
       if (!res.error) {
-        this.cars = res;
+        this.cars = res.data;
       }
     });
     this.newCar = {id: null, type: null, manufacturer: null, year: null};
