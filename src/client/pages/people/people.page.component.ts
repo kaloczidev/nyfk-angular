@@ -20,20 +20,20 @@ export class PeoplePageComponent {
 
   edit(id: number, data: Person) {
     this.service.update(id, data).subscribe(res => {
-      console.log('send', res);
+      console.log('send', res.data);
     });
   }
 
   del(id: number) {
     this.service.del(id).subscribe(res => {
-      console.log('delete:', res);
+      console.log('delete:', res.data);
       this.update();
     });
   }
 
   add() {
     this.service.add(this.newPerson).subscribe(res => {
-      console.log('add:', res);
+      console.log('add:', res.data);
       this.update();
     });
   }
@@ -41,7 +41,16 @@ export class PeoplePageComponent {
   private update() {
     this.peoples = [];
     this.service.list().subscribe(res => {
-      this.peoples = res;
+      if(!res.error) {
+        this.peoples = res.data;
+      }else {
+          console.error('error', res.error );
+          this.peoples = [
+              {id:1, name: 'dummy joe', age: 111}
+          ]
+      }
+    }, err => {
+      console.log(err);
     });
     this.newPerson = {name: null, age: null};
   }

@@ -1,0 +1,20 @@
+<div class="person">
+  <h2>
+    <strong>{{data.id}}</strong>
+    {{!edit?data.name:''}}
+    <input type="text" *ngIf="edit" [(ngModel)]="data.name">
+  </h2>
+  <div class="data">
+    {{!edit?data.age:''}}
+    <input type="number" *ngIf="edit" [(ngModel)]="data.age">
+  </div>
+  <div class="data">
+    <button (click)="toggle()">
+      {{edit?'save':'edit'}}
+    </button>
+    <button (click)="del()">
+      delete
+    </button>
+
+  </div>
+</div>

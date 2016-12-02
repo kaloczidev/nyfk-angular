@@ -18,7 +18,9 @@ export class PeopleService {
   }
 
   list() {
-    return this.http.get(this.path).map(res => res.json());
+    return this.http.get(this.path)
+        .map(res => res.json())
+        .catch(this.handleError);
   }
 
   add(data: Person) {

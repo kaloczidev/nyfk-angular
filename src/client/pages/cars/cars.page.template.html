@@ -12,8 +12,8 @@
   </tr>
   </thead>
   <tbody>
-  <car-row *ngFor="let row of cars" [row]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)">
-  </car-row>
+  <car *ngFor="let row of cars" [data]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)">
+  </car>
   </tbody>
 
 </table>

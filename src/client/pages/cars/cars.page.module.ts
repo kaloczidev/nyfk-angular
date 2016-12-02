@@ -5,7 +5,7 @@ import {NgModule} from '@angular/core';
 
 import {CarsPageComponent} from './cars.page.component';
 import {CommonModule} from '@angular/common';
-import {CarEditorModule} from '../../components/car-row/car-row.module';
+import {CarEditorModule} from '../../components/car/car.module';
 import {CarsService} from './cars.service';
 import {FormsModule} from '@angular/forms';
 

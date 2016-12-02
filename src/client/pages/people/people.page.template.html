@@ -1,20 +1,12 @@
 <h1>
   People
 </h1>
-<table>
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>command</th>
-  </tr>
-  </thead>
-  <tbody>
-  <person-row *ngFor="let row of peoples" [row]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)"></person-row>
-  </tbody>
+<div class="people-container">
+  <person *ngFor="let person of peoples"
+          [data]="person"
+  ></person>
+</div>
 
-</table>
 
 <hr>
 

@@ -6,30 +6,26 @@ import {Component, Input, EventEmitter, Output} from '@angular/core';
 import {Car} from '../../interfaces/car.interface';
 
 @Component({
-  selector: 'car-row',
-  templateUrl: 'car-row.template.html',
-  styleUrls: ['car-row.style.css']
+  selector: 'car',
+  templateUrl: 'car.template.html',
+  styleUrls: ['car.style.css']
 })
-export class CarEditorComponent {
+export class CarComponent {
 
-  @Input() set row(val: Car) {
-    this.value = val;
-  }
+  @Input() data: Car;
 
-  value: Car;
   edit: boolean = false;
   @Output() save = new EventEmitter<Car>();
-  @Output() remove = new EventEmitter<boolean>();
+  @Output() remove = new EventEmitter<number>();
 
   toggle() {
     if (this.edit) {
-      console.log(this.value);
-      this.save.emit(this.value);
+      console.log(this.data);
+      this.save.emit(this.data);
     }
     this.edit = !this.edit;
   }
-
   del() {
-    this.remove.emit(true);
+    this.remove.emit(this.data.id);
   }
 }

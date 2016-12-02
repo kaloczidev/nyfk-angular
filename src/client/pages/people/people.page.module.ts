@@ -6,7 +6,7 @@ import {NgModule} from '@angular/core';
 import {PeoplePageComponent} from './people.page.component';
 import {CommonModule} from '@angular/common';
 import {HttpModule} from '@angular/http';
-import {PersonEditorModule} from '../../components/person-row/person-row.module';
+import {PersonEditorModule} from '../../components/person/person.module';
 import {PeopleService} from './people.service';
 import {FormsModule} from '@angular/forms';
 

@@ -8,7 +8,6 @@ const router  = express.Router();
 
 const peopleController    = require('./controller/people.controller');
 const carsController      = require('./controller/cars.controller');
-const ownershipController = require('./controller/ownership.controller');
 
 router.get('/people/', peopleController.list);          //all
 router.get('/people/:id', peopleController.get);        //get
@@ -22,10 +21,5 @@ router.put('/cars/', carsController.put);           //add
 router.post('/cars/:id', carsController.post);      //upd
 router.delete('/cars/:id', carsController.delete);  //del
 
-router.get('/ownerships/', ownershipController.list);          //all
-router.get('/ownerships/:id', ownershipController.get);        //get
-router.put('/ownerships/', ownershipController.put);           //add
-router.post('/ownerships/:id', ownershipController.post);      //upd
-router.delete('/ownerships/:id', ownershipController.delete);  //del
 
 module.exports = router;
