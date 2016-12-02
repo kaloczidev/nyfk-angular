@@ -1,14 +1,28 @@
-table {
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
+.people-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
-thead th{
-  border-bottom: 2px solid #383539;
+
+.data {
+  margin: 5px 0;
 }
-person:nth-child(2n) {
-  background-color: #f0f0f0;
+
+label {
+  display: block;
+  position: relative;
 }
-tfoot{
-  padding-top: 20px;
+
+label input, label button {
+  display: inline-block;
+  position: absolute;
+  left: 200px;
+  width: calc(100% - 200px);
+}
+
+label input:after {
+  content: " ";
+  display: block;
+  clear: both;
 }

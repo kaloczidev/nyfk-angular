@@ -18,8 +18,8 @@ export class CarsPageComponent {
     this.update();
   }
 
-  edit(id: number, data: Car) {
-    this.service.update(id, data).subscribe(res => {
+  edit(data: Car) {
+    this.service.update(data.id, data).subscribe(res => {
       console.log('send', res);
     });
   }
@@ -41,8 +41,9 @@ export class CarsPageComponent {
   private update() {
     this.cars = [];
     this.service.list().subscribe(res => {
-      console.log(res);
-      this.cars = res;
+      if (!res.error) {
+        this.cars = res;
+      }
     });
     this.newCar = {id: null, type: null, manufacturer: null, year: null};
   }

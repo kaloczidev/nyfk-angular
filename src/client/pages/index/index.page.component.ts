@@ -9,5 +9,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./index.page.style.css']
 })
 export class IndexPageComponent {
-
+  textValue: string = '';
 }

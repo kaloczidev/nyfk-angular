@@ -4,11 +4,13 @@
 import {NgModule} from '@angular/core';
 
 import {IndexPageComponent} from './index.page.component';
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
-  imports     : [],
+  imports: [FormsModule, CommonModule],
   declarations: [IndexPageComponent],
-  exports     : [IndexPageComponent]
+  exports: [IndexPageComponent]
 })
 export class IndexPageModule {
 }

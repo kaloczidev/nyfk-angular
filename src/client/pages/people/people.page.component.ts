@@ -18,8 +18,8 @@ export class PeoplePageComponent {
     this.update();
   }
 
-  edit(id: number, data: Person) {
-    this.service.update(id, data).subscribe(res => {
+  edit(data: Person) {
+    this.service.update(data.id, data).subscribe(res => {
       console.log('send', res.data);
     });
   }
@@ -41,13 +41,13 @@ export class PeoplePageComponent {
   private update() {
     this.peoples = [];
     this.service.list().subscribe(res => {
-      if(!res.error) {
+      if (!res.error) {
         this.peoples = res.data;
-      }else {
-          console.error('error', res.error );
-          this.peoples = [
-              {id:1, name: 'dummy joe', age: 111}
-          ]
+      } else {
+        console.error('error', res.error);
+        this.peoples = [
+          {id: 1, name: 'dummy joe', age: 111}
+        ]
       }
     }, err => {
       console.log(err);

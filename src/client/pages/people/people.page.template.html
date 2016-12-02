@@ -4,50 +4,30 @@
 <div class="people-container">
   <person *ngFor="let person of peoples"
           [data]="person"
+          (remove)="del($event)"
+          (save)="edit($event)"
   ></person>
 </div>
-
-
 <hr>
-
-<table>
-  <thead>
-
-  <tr>
-    <td class="id">
-      add new
-    </td>
-
-    <td class="data">
-      Name
-    </td>
-
-    <td class="data">
-      Age
-    </td>
-
-    <td>
-        Command
-    </td>
-  </tr>
-  </thead>
-  <tr>
-    <td class="id">
-      Details:
-    </td>
-
-    <td class="data">
+<div class="person">
+  <h2>
+    add new person:
+  </h2>
+  <div class="data">
+    <label>Name:
       <input type="text" [(ngModel)]="newPerson.name">
-    </td>
-
-    <td class="data">
+    </label>
+  </div>
+  <div class="data">
+    <label>Age:
       <input type="number" [(ngModel)]="newPerson.age">
-    </td>
+    </label>
+  </div>
+  <div class="data">
+    <button (click)="add()">
+      Save
+    </button>
 
-    <td>
-      <button (click)="add()">
-        save
-      </button>
-    </td>
-  </tr>
-</table>
+  </div>
+</div>
+

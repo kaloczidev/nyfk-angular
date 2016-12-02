@@ -1,11 +1,11 @@
 <div class="person">
   <h2>
-    <strong>{{data.id}}</strong>
+    <strong>#{{data.id}}</strong>
     {{!edit?data.name:''}}
     <input type="text" *ngIf="edit" [(ngModel)]="data.name">
   </h2>
   <div class="data">
-    {{!edit?data.age:''}}
+    {{!edit?data.age:''}} years old.
     <input type="number" *ngIf="edit" [(ngModel)]="data.age">
   </div>
   <div class="data">

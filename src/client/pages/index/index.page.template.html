@@ -1,23 +1,17 @@
 <h1>
-  Index
+  Halp 101
 </h1>
 <div class="content">
-  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa distinctio ea esse incidunt nesciunt nisi
-    praesentium quae quam quidem quos rem repellat repellendus sapiente veniam, veritatis. Accusantium cumque iure
-    pariatur.
-  </div>
-  <div>Ad adipisci alias aliquid amet animi, aspernatur atque aut, consequatur debitis dolorum eius et excepturi,
-    expedita facilis id labore laboriosam magni maiores molestiae molestias nostrum perspiciatis porro quaerat tempora
-    voluptatum.
-  </div>
-  <div>A architecto, assumenda at beatae culpa delectus ea, enim est ex fugit incidunt sint vitae voluptate! Ab
-    accusamus, blanditiis eius, incidunt labore modi mollitia nostrum perferendis placeat rem tenetur ullam.
-  </div>
-  <div>A est inventore ipsam obcaecati voluptatum. A assumenda error est et incidunt itaque maiores, nihil quibusdam
-    ratione reprehenderit. Animi aperiam facilis id quo reiciendis velit. Eos ipsa odio quo reprehenderit?
-  </div>
-  <div>A adipisci aliquam corporis cumque id, maiores, nobis nostrum officiis placeat praesentium provident, quidem
-    repudiandae sit? Animi, blanditiis consequatur culpa cupiditate eaque id laborum maiores nihil porro praesentium
-    sequi voluptate!
+  Az inputokbol valo adatot a hozza tartozo komponens osztalyahoz kotve real-time tudjuk a valtozasokat kovetni. <br>
+  pl: <strong>PersonComponent</strong> data mezoje. lathato, hogy a templateban az inputokon egy
+  <strong>[(ngModel)]="data.name"</strong> szeru dolog van, ami az adott input erteket koti a megadott mezohoz. Ehhez a
+  FormsModule szukseges (lasd modulhasznalat, pl: HttpModule). <br>
+  Ez a ketiranyu adatkotes lenyege, valtozaskor az osztaly mezojenek erteke valos idoben valtozik.
+
+  <div class="demo">
+    <h4>Demo </h4>
+    <label>Neved:</label>
+    <input type="text" [(ngModel)]="textValue">
+    <p *ngIf="textValue">Hello {{textValue}} !</p>
   </div>
 </div>

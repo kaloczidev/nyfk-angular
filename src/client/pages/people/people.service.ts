@@ -12,15 +12,15 @@ export class PeopleService {
 
   headers = new Headers({"Content-Type": "application/json"});
   options = new RequestOptions({headers: this.headers});
-  path    = 'people';
+  path = 'people';
 
   constructor(private http: Http) {
   }
 
   list() {
     return this.http.get(this.path)
-        .map(res => res.json())
-        .catch(this.handleError);
+      .map(res => res.json())
+      .catch(this.handleError);
   }
 
   add(data: Person) {
@@ -51,8 +51,8 @@ export class PeopleService {
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';
-      const err  = body.error || JSON.stringify(body);
-      errMsg     = `${error.status} - ${error.statusText || ''} ${err}`;
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
     } else {
       errMsg = error.message ? error.message : error.toString();
     }

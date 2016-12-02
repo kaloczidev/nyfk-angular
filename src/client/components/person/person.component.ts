@@ -26,6 +26,7 @@ export class PersonComponent {
     }
     this.edit = !this.edit;
   }
+
   del() {
     this.remove.emit(this.data.id);
   }

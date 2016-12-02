@@ -1,74 +1,37 @@
 <h1>
   Cars
 </h1>
-<table>
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Manufacturer</th>
-    <th>Type</th>
-    <th>Year</th>
-    <th>command</th>
-  </tr>
-  </thead>
-  <tbody>
-  <car *ngFor="let row of cars" [data]="row" (save)="edit(row.id, $event)" (remove)="del(row.id)">
-  </car>
-  </tbody>
 
-</table>
-
+<div class="car-container">
+  <car *ngFor="let row of cars"
+       [data]="row"
+       (save)="edit($event)"
+       (remove)="del($event)"
+  ></car>
+</div>
 <hr>
 
-<table>
-  <thead>
-  <tr>
-    <td>
-      add new
-    </td>
-
-    <td class="data">
-      Manufacturer
-    </td>
-    <td class="data">
-      Type
-    </td>
-
-    <td class="data">
-      Year
-    </td>
-
-    <td>
-      Command
-    </td>
-
-
-  </tr>
-
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      details:
-    </td>
-
-    <td class="data">
+<div class="new-car">
+  <h2>
+    Add a new car
+  </h2>
+  <div class="data">
+    <label> manufacturer:
       <input type="text" [(ngModel)]="newCar.manufacturer">
-    </td>
-    <td class="data">
+    </label>
+  </div>
+  <div class="data">
+    <label>type:
       <input type="text" [(ngModel)]="newCar.type">
-    </td>
-
-    <td class="data">
-      <input type="number" [(ngModel)]="newCar.year">
-    </td>
-
-    <td>
-      <button (click)="add()">
-        save
-      </button>
-    </td>
-  </tr>
-
-  </tbody>
-</table>
+    </label>
+  </div>
+  <div class="data">
+    <label>model year:
+      <input type="number" [(ngModel)]="newCar.year"></label>
+  </div>
+  <div class="data">
+    <button (click)="add()">
+      Save
+    </button>
+  </div>
+</div>

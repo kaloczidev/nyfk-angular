@@ -1,21 +1,24 @@
 <div class="car">
   <h2>
-    <strong>{{data.id}}</strong>
-    {{!edit?data.name:''}}
-    <input type="text" *ngIf="edit" [(ngModel)]="data.name">
+    <strong>#{{data.id}}</strong>
+
   </h2>
   <div class="data">
-    {{!edit?data.year:''}}
+    manufacturer: {{!edit?data.manufacturer:''}}
+    <input type="text" *ngIf="edit" [(ngModel)]="data.manufacturer">
+  </div>
+  <div class="data">
+    type: {{!edit?data.type:''}}
+    <input type="text" *ngIf="edit" [(ngModel)]="data.type">
+  </div>
+  <div class="data">
+    model year: {{!edit?data.year:''}}
     <input type="number" *ngIf="edit" [(ngModel)]="data.year">
   </div>
   <div class="data">
-    {{!edit?data.manufacturer:''}}
-    <input type="number" *ngIf="edit" [(ngModel)]="data.manufacturer">
-  </div>
-  <div class="data">
     <button (click)="toggle()">
-    {{edit?'save':'edit'}}
-  </button>
+      {{edit?'save':'edit'}}
+    </button>
     <button (click)="del()">
       delete
     </button>

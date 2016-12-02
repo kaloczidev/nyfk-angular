@@ -61,7 +61,7 @@ let add = (data, callback) => {
   conn.end();
 };
 
-let update = (id, data, callback) =>{
+let update = (id, data, callback) => {
   const query = `UPDATE people SET
                   name="${data.name}",
                   age=${data.age}
@@ -83,7 +83,7 @@ let update = (id, data, callback) =>{
   conn.end();
 };
 
-let del = (id, callback) =>{
+let del = (id, callback) => {
   const query = `DELETE FROM people WHERE id=${id}`;
   let conn    = mysql.createConnection(MYSQL_CONFIG);
   conn.query(query, (err, rows) => {
