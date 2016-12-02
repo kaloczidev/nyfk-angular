@@ -9,3 +9,8 @@
 .demo input {
   width: 150px;
 }
+
+h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

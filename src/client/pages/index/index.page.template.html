@@ -7,9 +7,20 @@
   <strong>[(ngModel)]="data.name"</strong> szeru dolog van, ami az adott input erteket koti a megadott mezohoz. Ehhez a
   FormsModule szukseges (lasd modulhasznalat, pl: HttpModule). <br>
   Ez a ketiranyu adatkotes lenyege, valtozaskor az osztaly mezojenek erteke valos idoben valtozik.
+  <hr>
+  Routolas: App.module-ban lathato pelda, egy komponenst kell megadni amit a router majd cserelget az adott url-nek
+  megfeleloen. <br> useHash: # alkalmazasa az urlben, hogy veletlenul se kuldjon a szervernek egy masik kerest. ( # ugye
+  oldalon beluli navigaciora szolgal).
+  <hr>
+  layout: egy wrapper az egesz tartalomnak, ez tartalmazza a fejlecet es a lablecet. a benne levo tartlom szamara helyet
+  biztosit, es ezen belul cserelgeti a router a tartalmat. Erre a celra vannak a PageComponent-ek.
+  <br>
+  <br>
+
+  Ez a repo egy kiindulasi alap, ezt ajanlott szemelyre (feladatra) szabni.
 
   <div class="demo">
-    <h4>Demo </h4>
+    <h2>ketiranyu adatkotes demo</h2>
     <label>Neved:</label>
     <input type="text" [(ngModel)]="textValue">
     <p *ngIf="textValue">Hello {{textValue}} !</p>

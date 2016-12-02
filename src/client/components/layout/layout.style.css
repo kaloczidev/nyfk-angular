@@ -63,5 +63,12 @@
 
 .footer {
   text-align: center;
-  color: #9f9aa0;
+  color: #608aa0;
+  opacity: .7;
+}
+.contact {
+  text-decoration: none;
+  color: #3e7d93;
+  display: inline-block;
+  padding: 5px;
 }
